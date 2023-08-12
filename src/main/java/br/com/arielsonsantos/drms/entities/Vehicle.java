@@ -1,16 +1,17 @@
 package br.com.arielsonsantos.drms.entities;
 
-import br.com.arielsonsantos.drms.enums.VehicleStatus;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import br.com.arielsonsantos.drms.enums.VehicleStatus;
 
 @Entity
 public class Vehicle {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String licensePlate;
     private String model;

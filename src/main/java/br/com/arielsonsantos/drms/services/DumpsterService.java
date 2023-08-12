@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import br.com.arielsonsantos.drms.entities.Dumpster;
+import br.com.arielsonsantos.drms.enums.DumpsterStatus;
 import br.com.arielsonsantos.drms.repositories.DumpsterRepository;
 
 @Service
@@ -21,6 +22,7 @@ public class DumpsterService {
 	}
 
 	public Dumpster save(Dumpster dumpster) {
+		dumpster.setStatus(DumpsterStatus.FREE);
 		return dumpsterRepository.save(dumpster);
 	}
 
