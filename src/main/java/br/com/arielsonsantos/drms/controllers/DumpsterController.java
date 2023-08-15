@@ -2,6 +2,9 @@ package br.com.arielsonsantos.drms.controllers;
 
 import java.util.Optional;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +16,7 @@ import br.com.arielsonsantos.drms.entities.Dumpster;
 import br.com.arielsonsantos.drms.services.DumpsterService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/dumpster")
 public class DumpsterController {
 	
@@ -33,8 +37,9 @@ public class DumpsterController {
 	}
 	
 	@PostMapping()
-	public Dumpster save(@RequestBody Dumpster dumpster) {
-		return dumpsterService.save(dumpster);
+	public ResponseEntity<Dumpster> save(@RequestBody Dumpster dumpster) {
+		dumpsterService.save(dumpster);
+		return ResponseEntity.status(HttpStatus.CREATED).body(dumpster);
 	}
 
 }
