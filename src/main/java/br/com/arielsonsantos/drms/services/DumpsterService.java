@@ -29,4 +29,8 @@ public class DumpsterService {
 	public Optional<Dumpster> findById(Long id) {
 		return dumpsterRepository.findById(id);
 	}
+	
+	public void delete(Dumpster dumpster) {
+		dumpsterRepository.delete(dumpster);
+	}
 }
