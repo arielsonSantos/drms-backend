@@ -8,7 +8,7 @@ import br.com.arielsonsantos.drms.repositories.DumpsterTypeRepository;
 @Service
 public class DumpsterTypeService extends DRMSService<DumpsterType> {
 
-	public DumpsterTypeService(DumpsterTypeRepository dumpsterTypeRepository) {
+	public DumpsterTypeService(final DumpsterTypeRepository dumpsterTypeRepository) {
 		super(dumpsterTypeRepository);
 	}
 }

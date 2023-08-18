@@ -12,14 +12,14 @@ public class VehicleType implements DRMSEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String description;
-	
+
 	public VehicleType() {
 	}
-	
+
 	public VehicleType(final String description) {
 		this.description = description;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}

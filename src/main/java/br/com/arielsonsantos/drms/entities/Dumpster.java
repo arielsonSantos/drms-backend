@@ -10,7 +10,7 @@ import br.com.arielsonsantos.drms.enums.DumpsterStatus;
 
 @Entity
 public class Dumpster implements DRMSEntity {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -20,13 +20,13 @@ public class Dumpster implements DRMSEntity {
 
 	public Dumpster() {
 	}
-	
+
 	public Dumpster(final String identifier, final DumpsterType type, final DumpsterStatus status) {
 		this.identifier = identifier;
 		this.type = type;
 		this.status = status;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
