@@ -14,17 +14,17 @@ public class Vehicle implements DRMSEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-    private String licensePlate;
-    private String model;
-    private Short modelYear;
-    private String manufacturer;
-    private String color;
-    private @ManyToOne VehicleType type;
-    private VehicleStatus status;
-    
-    public Vehicle() {
+	private String licensePlate;
+	private String model;
+	private Short modelYear;
+	private String manufacturer;
+	private String color;
+	private @ManyToOne VehicleType type;
+	private VehicleStatus status;
+
+	public Vehicle() {
 	}
-	
+
 	public Vehicle(final String licensePlate, final String model, final Short modelYear, final String manufacturer, final String color, final VehicleType type, final VehicleStatus status) {
 		this.licensePlate = licensePlate;
 		this.model = model;
@@ -34,22 +34,22 @@ public class Vehicle implements DRMSEntity {
 		this.type = type;
 		this.status = status;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
 
-    public String getLicensePlate() {
-        return licensePlate;
-    }
+	public String getLicensePlate() {
+		return licensePlate;
+	}
 
-    public void setLicensePlate(final String licensePlate) {
-        this.licensePlate = licensePlate;
-    }
+	public void setLicensePlate(final String licensePlate) {
+		this.licensePlate = licensePlate;
+	}
 
-    public String getModel() {
-        return model;
-    }
+	public String getModel() {
+		return model;
+	}
 
 	public Short getModelYear() {
 		return modelYear;
@@ -59,19 +59,19 @@ public class Vehicle implements DRMSEntity {
 		this.modelYear = modelYear;
 	}
 
-    public void setModel(final String model) {
-        this.model = model;
-    }
+	public void setModel(final String model) {
+		this.model = model;
+	}
 
-    public String getManufacturer() {
-        return manufacturer;
-    }
+	public String getManufacturer() {
+		return manufacturer;
+	}
 
-    public void setManufacturer(final String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
+	public void setManufacturer(final String manufacturer) {
+		this.manufacturer = manufacturer;
+	}
 
-    public String getColor() {
+	public String getColor() {
 		return color;
 	}
 
@@ -80,10 +80,10 @@ public class Vehicle implements DRMSEntity {
 	}
 
 	public VehicleStatus getStatus() {
-        return status;
-    }
+		return status;
+	}
 
-    public void setStatus(final VehicleStatus status) {
-        this.status = status;
-    }
+	public void setStatus(final VehicleStatus status) {
+		this.status = status;
+	}
 }

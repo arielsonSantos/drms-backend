@@ -8,7 +8,7 @@ import br.com.arielsonsantos.drms.repositories.VehicleTypeRepository;
 @Service
 public class VehicleTypeService extends DRMSService<VehicleType> {
 
-	public VehicleTypeService(VehicleTypeRepository vehicleTypeRepository) {
+	public VehicleTypeService(final VehicleTypeRepository vehicleTypeRepository) {
 		super(vehicleTypeRepository);
 	}
 }

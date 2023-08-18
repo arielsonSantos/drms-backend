@@ -12,14 +12,14 @@ public class DumpsterType implements DRMSEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String description;
-	
+
 	public DumpsterType() {
 	}
-	
+
 	public DumpsterType(final String description) {
 		this.description = description;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
