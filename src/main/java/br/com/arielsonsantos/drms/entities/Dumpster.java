@@ -9,22 +9,24 @@ import javax.persistence.ManyToOne;
 import br.com.arielsonsantos.drms.enums.DumpsterStatus;
 
 @Entity
-public class Dumpster {
+public class Dumpster implements DRMSEntity {
 	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String identifier;
 	private @ManyToOne DumpsterType type;
 	private DumpsterStatus status;
 
-	protected Dumpster() {
+	public Dumpster() {
 	}
 	
-	public Dumpster(String identifier, DumpsterType type, DumpsterStatus status) {
+	public Dumpster(final String identifier, final DumpsterType type, final DumpsterStatus status) {
 		this.identifier = identifier;
 		this.type = type;
 		this.status = status;
 	}
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -33,7 +35,7 @@ public class Dumpster {
 		return identifier;
 	}
 
-	public void setIdentifier(String identifier) {
+	public void setIdentifier(final String identifier) {
 		this.identifier = identifier;
 	}
 
@@ -41,7 +43,7 @@ public class Dumpster {
 		return type;
 	}
 
-	public void setType(DumpsterType type) {
+	public void setType(final DumpsterType type) {
 		this.type = type;
 	}
 
@@ -49,7 +51,7 @@ public class Dumpster {
 		return status;
 	}
 
-	public void setStatus(DumpsterStatus status) {
+	public void setStatus(final DumpsterStatus status) {
 		this.status = status;
 	}
 }
