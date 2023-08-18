@@ -6,17 +6,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class DumpsterType implements DRMSEntity {
+public class VehicleType implements DRMSEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String description;
 	
-	public DumpsterType() {
+	public VehicleType() {
 	}
 	
-	public DumpsterType(final String description) {
+	public VehicleType(final String description) {
 		this.description = description;
 	}
 	
