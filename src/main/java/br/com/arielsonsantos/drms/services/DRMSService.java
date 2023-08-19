@@ -22,6 +22,11 @@ public abstract class DRMSService<Entity extends DRMSEntity> {
 		return repository.save(entity);
 	}
 
+	public Entity update(final Entity entity, final Entity newEntity) {
+		merge(entity, newEntity);
+		return repository.save(entity);
+	}
+
 	public Optional<Entity> findById(final Long id) {
 		return repository.findById(id);
 	}
@@ -29,4 +34,6 @@ public abstract class DRMSService<Entity extends DRMSEntity> {
 	public void delete(final Entity entity) {
 		repository.delete(entity);
 	}
+
+	public abstract Entity merge(final Entity entity, final Entity newEntity);
 }

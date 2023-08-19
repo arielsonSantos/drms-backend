@@ -22,8 +22,6 @@ public abstract class DRMSController<Entity extends DRMSEntity> {
 	protected String entityName;
 	protected DRMSService<Entity> service;
 
-	public abstract Entity merge(final Entity entity, final Entity newEntity);
-
 	@GetMapping()
 	public Iterable<Entity> findAll() {
 		return service.findAll();
@@ -43,10 +41,7 @@ public abstract class DRMSController<Entity extends DRMSEntity> {
 	@PutMapping("/{id}")
 	public ResponseEntity<Entity> update(@PathVariable final Long id, @RequestBody final Entity newEntity) {
 		final Entity entity = service.findById(id).orElseThrow(() -> new EntityNotFoundException(entityName, id));
-
-		merge(entity, newEntity);
-		service.save(entity);
-
+		service.update(entity, newEntity);
 		return ResponseEntity.status(HttpStatus.CREATED).body(entity);
 	}
 
