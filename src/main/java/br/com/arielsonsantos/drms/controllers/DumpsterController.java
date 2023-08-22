@@ -14,12 +14,4 @@ public class DumpsterController extends DRMSController<Dumpster> {
 		entityName = "Caçamba";
 		service = dumpsterService;
 	}
-
-	@Override
-	public Dumpster merge(final Dumpster dumpster, final Dumpster newDumpster) {
-		dumpster.setIdentifier(newDumpster.getIdentifier());
-		dumpster.setType(newDumpster.getType());
-		dumpster.setStatus(newDumpster.getStatus());
-		return dumpster;
-	}
 }

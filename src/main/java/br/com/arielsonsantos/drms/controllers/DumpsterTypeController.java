@@ -14,10 +14,4 @@ public class DumpsterTypeController extends DRMSController<DumpsterType> {
 		entityName = "Tipo de caçamba";
 		service = dumpsterTypeService;
 	}
-
-	@Override
-	public DumpsterType merge(final DumpsterType dumpsterType, final DumpsterType newDumpsterType) {
-		dumpsterType.setDescription(newDumpsterType.getDescription());
-		return dumpsterType;
-	}
 }

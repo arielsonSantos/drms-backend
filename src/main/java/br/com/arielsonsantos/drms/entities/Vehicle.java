@@ -51,16 +51,16 @@ public class Vehicle implements DRMSEntity {
 		return model;
 	}
 
+	public void setModel(final String model) {
+		this.model = model;
+	}
+
 	public Short getModelYear() {
 		return modelYear;
 	}
 
 	public void setModelYear(final Short modelYear) {
 		this.modelYear = modelYear;
-	}
-
-	public void setModel(final String model) {
-		this.model = model;
 	}
 
 	public String getManufacturer() {
@@ -77,6 +77,14 @@ public class Vehicle implements DRMSEntity {
 
 	public void setColor(final String color) {
 		this.color = color;
+	}
+
+	public VehicleType getType() {
+		return type;
+	}
+
+	public void setType(final VehicleType type) {
+		this.type = type;
 	}
 
 	public VehicleStatus getStatus() {

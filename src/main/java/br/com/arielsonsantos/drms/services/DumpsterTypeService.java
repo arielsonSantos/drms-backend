@@ -11,4 +11,10 @@ public class DumpsterTypeService extends DRMSService<DumpsterType> {
 	public DumpsterTypeService(final DumpsterTypeRepository dumpsterTypeRepository) {
 		super(dumpsterTypeRepository);
 	}
+
+	@Override
+	public DumpsterType merge(final DumpsterType dumpsterType, final DumpsterType newDumpsterType) {
+		dumpsterType.setDescription(newDumpsterType.getDescription());
+		return dumpsterType;
+	}
 }

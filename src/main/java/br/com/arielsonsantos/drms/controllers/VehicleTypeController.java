@@ -14,10 +14,4 @@ public class VehicleTypeController extends DRMSController<VehicleType> {
 		entityName = "Tipo de veículo";
 		service = vehicleTypeService;
 	}
-
-	@Override
-	public VehicleType merge(final VehicleType vehicleType, final VehicleType newVehicleType) {
-		vehicleType.setDescription(newVehicleType.getDescription());
-		return vehicleType;
-	}
 }

@@ -11,4 +11,10 @@ public class VehicleTypeService extends DRMSService<VehicleType> {
 	public VehicleTypeService(final VehicleTypeRepository vehicleTypeRepository) {
 		super(vehicleTypeRepository);
 	}
+
+	@Override
+	public VehicleType merge(final VehicleType vehicleType, final VehicleType newVehicleType) {
+		vehicleType.setDescription(newVehicleType.getDescription());
+		return vehicleType;
+	}
 }
